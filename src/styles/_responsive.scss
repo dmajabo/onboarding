@@ -1,0 +1,16 @@
+$_breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+@function getBreakpoint($bp) {
+  @return map-get($_breakpoints, $bp);
+}
+
+@mixin responsive($bp) {
+  @media screen and (min-width: getBreakpoint($bp)) {
+    @content;
+  }
+}

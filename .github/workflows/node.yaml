@@ -1,0 +1,58 @@
+name: Onboarding reusable CD
+
+on:
+  workflow_call:
+    inputs:
+      s3_bucket:
+        required: true
+        type: string
+      aws_region:
+        required: true
+        type: string
+      cf_dist:
+        required: true
+        type: string
+    secrets:
+      aws_access_key_id:
+        required: true
+      aws_secret_access_key:
+        required: true
+      
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  reusable_build_deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    steps:
+      - uses: actions/checkout@v2
+      - name: Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
+      - name: Install dependencies
+        run: yarn install
+      - name: Build
+        run: yarn build
+        env:
+          CI: false
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.aws_access_key_id }}
+          aws-secret-access-key: ${{ secrets.aws_secret_access_key }}
+          aws-region: ${{ inputs.aws_region }}
+      - name: install-aws-cli
+        uses: unfor19/install-aws-cli-action@v1
+        with:
+          version: 2.3.0     # default
+          verbose: false # default
+      - run: aws s3 sync build s3://${{ inputs.s3_bucket }}/
+        shell: bash
+      - run: aws cloudfront create-invalidation --distribution-id ${{ inputs.cf_dist }} --paths '/*'
+        shell: bash

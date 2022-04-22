@@ -1,0 +1,33 @@
+@use "/src/styles/theme" as th;
+
+.header {
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(th.getColor(white), 0.5);
+
+  &-dark {
+    background-color: rgba(th.getColor(blue), 0.5);
+  }
+
+  &__title {
+    font-family: "Roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: rgba(th.getColor(dark), 0.4);
+    font-size: 1.5rem;
+    user-select: none;
+
+    &-dark {
+      color: th.getColor(white);
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

@@ -1,0 +1,12 @@
+owner: Distro Energy
+instance: playpen01
+prefix: de
+delimeter: '-'
+assetBucket: public-web
+s3ServerAccessLogsBucket: false
+hostedZoneId: Z03141993UWQUDKEODAQ0
+hostedZoneName: playpen01.distro.energy
+certificateArn: arn:aws:acm:us-east-1:543548565886:certificate/6c64a78d-3b1d-4ad1-b7b6-f78f8e36c998
+envEuWest1:
+  account: '543548565886'
+  region: eu-west-1

@@ -1,0 +1,76 @@
+.UserIcon {
+  border-radius: 5px;
+  width: auto;
+  height : 185px;
+  margin: 6px;
+  //display: inline-block;
+  background-color: #2B303F;
+  position: relative;
+
+  .MuiIconButton-root {
+    float : right;
+    padding : 6px 2px 0px 0px;
+    color : #707687;
+  }
+
+  .menuHolder {
+    position: absolute;
+    top : 0;
+    right : 0;
+  }
+
+  .contents {
+    position: absolute;
+    bottom : 10px;
+    left : 0;
+    width: 100%;
+    text-align: center;
+    //padding-top : 50px;
+    border-radius: 12.5px;
+    pointer-events: none;
+
+    .circle {
+
+      padding-bottom : 30px;
+      .initials {
+        border-radius: 50%;
+        background-color: #F3CBBC;
+        color: rgba(76, 72, 72, 0.67);
+        padding: 12px 12px 12px 12px;
+        font-size: 280%;
+
+        display: inline-block;
+        //margin-bottom: 50px;
+
+
+      }
+
+      .role {
+        border-radius: 12px;
+        background-color: red;
+        //max-width: 50px;
+        margin-left : 20%;
+        margin-right : 20%;
+        margin-top: 5px;
+
+        &.Admin {
+          background-color: blue;
+        }
+
+        &.User {
+          background-color: green;
+        }
+
+      }
+
+    }
+
+    footer {
+      div {
+        color : #EF6C00;
+        font-size: 80%;
+      }
+    }
+  }
+
+}

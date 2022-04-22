@@ -1,0 +1,52 @@
+@use "./theme" as th;
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("./fonts/OpenSans/OpenSans-SemiBold.ttf") format("TrueType");
+  font-display: swap;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("./fonts/OpenSans/OpenSans-Bold.ttf") format("TrueType");
+  font-display: swap;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("./fonts/OpenSans/OpenSans-Regular.ttf") format("TrueType");
+  font-display: swap;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto/Roboto-Regular.ttf") format("TrueType");
+  font-display: swap;
+  font-weight: 400;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  transition: all 0.3 ease;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 64rem;
+  margin: 0 auto;
+  height: auto;
+}

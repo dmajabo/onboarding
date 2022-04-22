@@ -1,0 +1,27 @@
+@use "/src/styles/theme" as th;
+
+.button {
+  border: none;
+  outline: none;
+  border-radius: 100px;
+  color: th.getColor(white);
+  background-color: th.getColor(accent);
+  padding: 0.8rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active {
+    box-shadow: 0 0 0 2px darken(th.getColor(accent), 15);
+    transform: scale(1);
+  }
+
+  &-uppercase {
+    text-transform: uppercase;
+  }
+}

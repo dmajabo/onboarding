@@ -1,0 +1,64 @@
+@use "/src/styles/theme" as th;
+@use "/src/styles/responsive" as rp;
+
+.container {
+  position: relative;
+  margin-top: 8rem;
+  margin-bottom: 2rem;
+
+  &__blur {
+    width: 100%;
+    position: relative;
+
+    @include rp.responsive(sm) {
+      width: max-content;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 110%;
+      height: 110%;
+      background-color: th.getColor(rgba(0, 0, 255, 0.5));
+      opacity: 0.2;
+      filter: blur(5px);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.logo {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  object-fit: cover;
+}
+
+.headline {
+  margin-top: 2rem;
+  font-size: 4rem;
+  color: th.getColor(white);
+
+  &__span {
+    color: th.getColor(blue);
+
+    &-dark {
+      color: th.getColor(white);
+      text-shadow: 3px 3px th.getColor(blue), 3px 3px th.getColor(blue), 3px 3px th.getColor(blue);
+    }
+  }
+}
+
+.subheadline {
+  width: 100%;
+  font-size: 170%;
+  max-width: 450px;
+  color: th.getColor(white);
+}
+
+.btn {
+  margin-top: 2rem;
+}

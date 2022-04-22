@@ -1,0 +1,23 @@
+name: Onboarding dev caller workflow
+
+on:
+  push:
+    branches: [ deploy/playpen01 ]
+  pull_request:
+    branches: [ deploy/playpen01 ]
+
+   # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+concurrency: ci-${{ github.ref }}
+
+jobs:
+  caller_build_deploy:
+      uses: ./.github/workflows/node.yaml
+      with:
+        s3_bucket: de-playpen01-public-web
+        aws_region: eu-west-1
+        cf_dist: E22SJANVNDD00E
+      secrets:
+        aws_access_key_id: ${{ secrets.PLAYPEN01_AWS_ACCESS_KEY_ID }}
+        aws_secret_access_key: ${{ secrets.PLAYPEN01_AWS_SECRET_ACCESS_KEY }}

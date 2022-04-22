@@ -1,0 +1,113 @@
+@use "/src/styles/responsive" as rp;
+
+.container {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+
+  svg {
+    position: absolute;
+  }
+
+}
+
+.polygons {
+  &__honeycomb {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -90px;
+    transform: scale(0.5);
+    right: -50px;
+
+    @include rp.responsive(sm) {
+      transform: scale(0.7);
+      right: -200px;
+    }
+
+    @include rp.responsive(lg) {
+      right: -330px;
+    }
+
+    @include rp.responsive(xl) {
+      transform: scale(0.85);
+      right: -580px;
+    }
+  }
+  &__three_ {
+    &left {
+      top: 320px;
+      left: 125px;
+
+      &_sm_left {
+        top: 400px;
+        left: 15px;
+      }
+      &_sm_top_right {
+        top: 340px;
+        left: 215px;
+      }
+      &_sm_top_bottom {
+        top: 420px;
+        left: 240px;
+      }
+    }
+    &top_right {
+      top: 65px;
+      left: 600px;
+
+      &_sm_left_ {
+        &top {
+          top: 20px;
+          left: 530px;
+        }
+        &bottom {
+          top: 110px;
+          left: 560px;
+        }
+      }
+      &_sm_right {
+        top: 40px;
+        left: 790px;
+      }
+    }
+  }
+  &__top_md_ {
+    &left {
+      top: 120px;
+      left: 100px;
+    }
+    &right {
+      top: 20px;
+      left: 290px;
+    }
+  }
+  &__bottom {
+    &_sm_ {
+      &1 {
+        bottom: 200px;
+        left: 300px;
+      }
+      &3 {
+        bottom: 210px;
+        left: 440px;
+      }
+      &4 {
+        bottom: 230px;
+        left: 500px;
+      }
+    }
+    &_md_ {
+      &2 {
+        bottom: 200px;
+        left: 340px;
+      }
+      &5 {
+        bottom: 240px;
+        left: 520px;
+      }
+    }
+  }
+}

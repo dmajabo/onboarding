@@ -1,0 +1,29 @@
+.container {
+  position: absolute;
+
+  &-rotate {
+    transform: rotate(300deg);
+  }
+
+  svg {
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+.polygon {
+  &_top {
+    top: 0;
+    left: 0;
+  }
+
+  &_left {
+    top: 35px;
+    left: -60px;
+  }
+
+  &_bottom {
+    top: 70px;
+    left: 0;
+  }
+}

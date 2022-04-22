@@ -1,0 +1,19 @@
+$_primary: #69cdf5;
+$_secondary: #f9f9f9;
+$_accent: #f76d1d;
+$_white: #fff;
+$_blue: #2770c9;
+$_dark: #222;
+
+$_colors: (
+  primary: $_primary,
+  secondary: $_secondary,
+  accent: $_accent,
+  white: $_white,
+  blue: $_blue,
+  dark: $_dark,
+);
+
+@function getColor($color-name) {
+  @return map-get($_colors, $color-name);
+}

@@ -1,0 +1,14 @@
+{
+  readings_grouped_view(where: {device_id: {_eq: "server1:3"}}) {
+    device_id
+    time_bucket_day
+    sum
+  }
+  readings_grouped_view_aggregate (where: {device_id: {_eq: "server1:3"}}) {
+    aggregate {
+      sum {
+        sum
+      }
+    }
+  }
+}

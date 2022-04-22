@@ -1,0 +1,49 @@
+{
+    "menu": "Menu",
+    "langSettings": {
+        "title": "Select Language",
+        "options": {
+            "en": "English",
+            "nl": "Dutch"
+        }
+    },
+    "translations" : {
+
+        "homePage": {
+            "title": "Welcome..."
+            },
+        "forms": {
+
+            "tandc" : {
+
+                "title" : "User T & Cs",
+
+                "form" : {
+                    "location": {
+                        "header": "do you agree?",
+                        "subHeader": "Question 1 of 4",
+                        "title": "Postcode",
+                        "description": "Please enter a valid postcode"
+                    }
+                }
+            },
+
+            "onboarding" : {
+
+                "title" : "Now a few details...",
+
+                "form" : {
+                    "location": {
+                        "header": "What's your name?",
+                        "subHeader": "Question 1",
+                        "title": "Postcode",
+                        "description": "Please enter a valid postcode"
+                    }
+
+                }
+            }
+        }
+        },
+
+    "submitButton": "Submit"
+}

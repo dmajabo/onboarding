@@ -1,0 +1,15 @@
+owner: Distro Energy
+instance: dev
+prefix: de
+delimeter: '-'
+assetBucket: public-web
+s3ServerAccessLogsBucket: true
+hostedZoneId: Z04960312YV4PWY6ICON5
+hostedZoneName: dev.distro.energy
+certificateArn: arn:aws:acm:us-east-1:504100497902:certificate/1ad30f2f-27b2-4d5e-8d15-20fcb0f39529
+envEuWest1:
+  account: '504100497902'
+  region: eu-west-1
+
+
+

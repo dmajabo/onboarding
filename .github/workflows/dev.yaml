@@ -1,0 +1,23 @@
+name: Onboarding dev caller workflow
+
+on:
+  push:
+    branches: [ deploy/dev ]
+  pull_request:
+    branches: [ deploy/dev ]
+
+   # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+concurrency: ci-${{ github.ref }}
+
+jobs:
+  caller_build_deploy:
+      uses: ./.github/workflows/node.yaml
+      with:
+        s3_bucket: de-dev-public-web
+        aws_region: eu-west-1
+        cf_dist: EM73RM1H7ZWRF
+      secrets:
+        aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

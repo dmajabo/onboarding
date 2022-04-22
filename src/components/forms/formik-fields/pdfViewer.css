@@ -1,0 +1,15 @@
+.pdfWrapper {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  width: 500px;
+  max-width: 500px;
+  background-color: lightsalmon;
+}
+
+.mypdf-container-pages {
+  display: flex;
+  width: fit-content;
+  flex-direction: row;
+  justify-content: center;
+}
