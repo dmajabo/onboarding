@@ -1,10 +1,9 @@
 import React, { useState, useContext } from 'react';
-import { Box, Fade } from '@mui/material';
-import { Typography } from '@mui/material';
 import LoginForm from './components/login-form/LoginForm';
 import ChangePasswordForm from './components/change-password-form/ChangePasswordForm';
 import ResetPasswordForm from './components/reset-password-form/ChangePasswordForm';
 import { UserContext } from 'components/providers/UserProvider';
+import '../login.css';
 
 const LoginPage = () => {
     const { user } = useContext(UserContext);
@@ -12,45 +11,77 @@ const LoginPage = () => {
     //we need 2 different flows for changing a password and resetting a password as changing requires a session object
     const [changePassword, setChangePassword] = useState(null); //changePassword will contain the session user returned from cognito where setChangePassword is called. Currently needed for it to work
     const [resetPassword, setResetPassword] = useState(null);
+    const [signUp, setsignUp] = useState(false);
 
+    // const SelectedForm = signUp ? SignupForm : LoginForm;
     return (
-        <Fade in={true} timeout={750}>
-            <Box display="flex" flexDirection="column" alignItems="center">
-                <Box marginTop={5}></Box>
-                <Box marginTop={8}>
-                    {!changePassword && (
-                        <Typography variant="h2" align="center">
-                            Sign in
-                        </Typography>
-                    )}
+        <div className="auth-container">
+            <div className="logo"></div>
+            <div className="auth-form">
+                <h2>{signUp ? 'Sign Up' : 'Sign In'} </h2>
+                {!changePassword && !resetPassword && (
+                    <LoginForm
+                        user={user}
+                        changePassword={changePassword}
+                        setChangePassword={setChangePassword}
+                        setResetPassword={setResetPassword}
+                        isSignup={signUp}
+                        onChangeSignMethod={() => setsignUp(!signUp)}
+                    />
+                )}
 
-                    {changePassword && (
-                        <Typography variant="h2" align="center">
-                            Change Password
-                        </Typography>
-                    )}
-                </Box>
-                <Box marginTop={5} width="100%">
-                    {!changePassword && !resetPassword && (
-                        <LoginForm
-                            user={user}
-                            changePassword={changePassword}
-                            setChangePassword={setChangePassword}
-                            setResetPassword={setResetPassword}
-                        />
-                    )}
-                    {true && changePassword && (
-                        <ChangePasswordForm
-                            user={user}
-                            changePassword={changePassword}
-                            setChangePassword={setChangePassword}
-                        />
-                    )}
-                    {true && resetPassword && <ResetPasswordForm user={resetPassword} />}
-                </Box>
-            </Box>
-        </Fade>
+                {/* {resetPassword && <ResetPasswordForm user={resetPassword} />} */}
+            </div>
+        </div>
     );
+
+    // return (
+    //     <Fade in={true} timeout={750}>
+    //         <Box display="flex" flexDirection="column" alignItems="center">
+    //             <Box marginTop={5}></Box>
+    //             <Box marginTop={8}>
+    //                 {!changePassword && (
+    //                     <Typography variant="h2" align="center">
+    //                         Sign in
+    //                     </Typography>
+    //                 )}
+
+    //                 {changePassword && (
+    //                     <Typography variant="h2" align="center">
+    //                         Change Password
+    //                     </Typography>
+    //                 )}
+    //             </Box>
+    //             <Box marginTop={5} width="100%">
+    //                 {signUp && (
+    //                     <SignupForm
+    //                         user={user}
+    //                         changePassword={changePassword}
+    //                         setChangePassword={setChangePassword}
+    //                         setResetPassword={setResetPassword}
+    //                     />
+    //                 )}
+
+    //                 {!changePassword && !resetPassword && !signUp && (
+    //                     <LoginForm
+    //                         user={user}
+    //                         changePassword={changePassword}
+    //                         setChangePassword={setChangePassword}
+    //                         setResetPassword={setResetPassword}
+    //                     />
+    //                 )}
+    //                 {true && changePassword && (
+    //                     <ChangePasswordForm
+    //                         user={user}
+    //                         changePassword={changePassword}
+    //                         setChangePassword={setChangePassword}
+    //                     />
+    //                 )}
+    //                 {true && resetPassword && <ResetPasswordForm user={resetPassword} />}
+    //             </Box>
+    //         </Box>
+    //     </Fade>
+    // );
 };
 
 export default LoginPage;

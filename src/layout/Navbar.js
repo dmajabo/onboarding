@@ -22,7 +22,6 @@ const NavBar = ({ menu }) => {
       >
         {menu}
      </Drawer>
-
     </nav>
   );
 };

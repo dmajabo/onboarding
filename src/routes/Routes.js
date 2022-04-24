@@ -1,5 +1,5 @@
 import React from 'react';
-import {  Switch } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import DashboardPage from 'pages/dashboard-page/';
 import Dashboard2 from 'components/Dashboard';
 import UsersPage from 'pages/users';
@@ -21,6 +21,7 @@ import WalletPage from 'pages/wallet-page';
 import InvoicePage from 'pages/invoice-page';
 import FAQPage from 'pages/faq-page';
 import HelpPage from 'pages/help-page';
+import IntroPage from 'pages/intro-page';
 
 const Routes = () => {
     //use account context to get the logged in account
@@ -47,6 +48,7 @@ const Routes = () => {
 
                 <PrivateTermsRoute exact={true} path="/terms" component={TermsPage} />
 
+                <PublicRoute exact={true} path="/intro" component={IntroPage} />
                 <PublicRoute exact={true} path="/welcome" component={WelcomePage2} />
                 <PublicRoute exact={true} path="/invite" component={LoginPage} />
                 <PublicRoute exact={true} path="/login" component={LoginPage} />

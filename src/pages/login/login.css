@@ -1,0 +1,95 @@
+.container {
+    background-image: url('/src/assets/blur.png');
+    background-size: cover;
+}
+.auth-container .logo {
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    background-image: url('/src/assets/logo.png');
+    background-size: cover;
+    width: 189px;
+    height: 29px;
+}
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+.auth-form {
+    width: 510px;
+    margin: auto;
+    border: 2px #ecf2ff20 solid;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    padding: 24px;
+    background-color: rgba(236, 242, 255, 0.08);
+}
+.auth-form h2 {
+    line-height: 32px;
+    font-size: 24px;
+    font-weight: 700;
+    /* margin: 15px; */
+    align-self: center;
+    /* margin-bottom: 24px; */
+    color: #ecf2ff;
+}
+.auth-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    color: white;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: right;
+    color: white;
+}
+.auth-form button.ant-btn-primary {
+    padding: 10px 24px;
+    height: 44px;
+}
+.auth-form button.ant-btn-primary > span {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+}
+.ant-input-affix-wrapper {
+    height: 44px;
+    background-color: transparent;
+    color: white;
+    font-size: 24px;
+    opacity: 0.5;
+}
+.ant-input-affix-wrapper:focus {
+    opacity: 1;
+}
+.ant-input-affix-wrapper > input.ant-input {
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: transparent;
+    color: white;
+}
+.ant-input-affix-wrapper > input.ant-input:focus {
+    /* border: 1px solid white; */
+}
+.ant-input-affix-wrapper .ant-input-prefix {
+    margin: 5px 6px;
+}
+.ant-input-affix-wrapper .ant-input-suffix > span {
+    color: white;
+}
+.ant-input-affix-wrapper .ant-input-suffix > span:hover {
+    color: white;
+}
+.ant-input-affix-wrapper-status-error {
+    background-color: transparent;
+}
+.ant-form-item {
+    margin-top: 24px;
+    margin-bottom: 0px;
+}
