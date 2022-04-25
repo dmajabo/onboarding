@@ -5,7 +5,7 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { TextField } from '@mui/material';
 import { Box, Typography } from '@mui/material';
-import { Button, Row, Col, Input, Form } from 'antd';
+import { Row, Col, Input, Form, Button } from 'antd';
 import { UserOutlined, LockOutlined, MailOutlined } from '@ant-design/icons';
 import Loading from 'components/loading/Loading';
 
@@ -67,6 +67,9 @@ const LoginForm = ({ changePassword, setResetPassword, setChangePassword, isSign
                                 prefix={<UserOutlined className="site-form-item-icon" />}
                                 placeholder="Username"
                                 size={'large'}
+                                disabled={query.get('email')}
+                                value={values.username}
+                                onChange={handleChange('username')}
                             />
                         </Form.Item>
                         {isSignup && (
@@ -75,6 +78,9 @@ const LoginForm = ({ changePassword, setResetPassword, setChangePassword, isSign
                                     prefix={<MailOutlined className="site-form-item-icon" />}
                                     placeholder="Email"
                                     size={'large'}
+                                    value={values.email}
+                                    onChange={handleChange('email')}
+                                    onBlur={handleBlur('email')}
                                 />
                             </Form.Item>
                         )}
@@ -83,6 +89,9 @@ const LoginForm = ({ changePassword, setResetPassword, setChangePassword, isSign
                                 prefix={<LockOutlined className="site-form-item-icon" />}
                                 placeholder={'password'}
                                 size={'large'}
+                                value={values.password}
+                                onChange={handleChange('password')}
+                                onBlur={handleBlur('password')}
                             />
                         </Form.Item>
 
@@ -116,6 +125,7 @@ const LoginForm = ({ changePassword, setResetPassword, setChangePassword, isSign
                                 // disabled={!isValid || submitting}
                                 type={'primary'}
                                 block
+                                htmlType="submit"
                             >
                                 {isSignup ? 'Sign Up' : 'Sign In'}
                             </Button>
