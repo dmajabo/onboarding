@@ -1,19 +1,21 @@
 import React from 'react';
 import { Row, Button } from 'antd';
+import { useHistory, useLocation } from 'react-router-dom';
 import './intro.css';
 
 export const Intro = () => {
+    const history = useHistory();
     return (
         <>
             <div className="main">
                 <img src={'/logo-main.png'} />
                 <h2 className="heading">has arrived in the port of Rotterdam</h2>
                 <div className="buttons">
-                    <Button type="primary" size={'large'}>
+                    <Button type="primary" size={'large'} onClick={() => history.push('/login')}>
                         Sign Up
                     </Button>
                     <div className="space"></div>
-                    <Button type={'default'} size={'large'}>
+                    <Button type={'default'} size={'large'} onClick={() => history.push('/login')}>
                         Sign In
                     </Button>
                 </div>
