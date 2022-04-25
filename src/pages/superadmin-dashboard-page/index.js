@@ -1,12 +1,11 @@
 import React from 'react';
 import Map from './../../components/Dashboard/Map';
-// import Snapshots from './../../components/superadmin/dashboard/snapshots';
+// import Map from './../../components/superadmin/deployments/Overview/map/Map';
 import Dashboard from 'components/Dashboard';
 
 const SuperAdminDashboard = () => (
     <div className="dashboard-container">
         <Map />
-        {/* <Snapshots /> */}
         <Dashboard />
     </div>
 );
