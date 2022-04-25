@@ -1,27 +1,37 @@
 import React, { useContext } from 'react';
 import { Layout } from 'antd';
+import { useLocation } from 'react-router-dom';
 import Sidebar from '../../layout/Sidebar';
 import NavBar from '../../layout/Navbar';
 import TopicMenu from '../../layout/Menu';
 import { UserAuthenticationContext } from 'components/providers/UserAuthenticationProvider';
-import { Container } from 'pages/intro-page';
+import PublicContainer from 'components/containers/Public';
 
 function App({ children }) {
     const { isLoggedIn } = useContext(UserAuthenticationContext);
+    const { pathname } = useLocation();
+
+    const className = `blur-bg ${pathname === '/welcome' && 'map-bg'} `;
 
     if (!isLoggedIn) {
-        return <Container>{children}</Container>;
+        return (
+            <div className={className}>
+                <PublicContainer>{children}</PublicContainer>
+            </div>
+        );
     }
 
     const Menu = <TopicMenu />;
     return (
         <div className="App">
-            <NavBar menu={Menu} />
-            <Layout>
-                <Sidebar menu={Menu} />
+            <div className={className}>
+                <NavBar menu={Menu} />
+                <Layout>
+                    <Sidebar menu={Menu} />
 
-                <Layout.Content className="content">{children}</Layout.Content>
-            </Layout>
+                    <Layout.Content className="content">{children}</Layout.Content>
+                </Layout>
+            </div>
         </div>
     );
 }

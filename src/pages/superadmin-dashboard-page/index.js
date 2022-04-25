@@ -1,11 +1,13 @@
 import React from 'react';
-import Overview from './../../components/superadmin/deployments/Overview';
-import ListDeployments from './../../components/superadmin/deployments/ListDeployments';
+import Map from './../../components/superadmin/dashboard/map';
+import Snapshots from './../../components/superadmin/dashboard/snapshots';
+// import Dashboard from 'components/Dashboard';
 
 const SuperAdminDashboard = () => (
     <div>
-        <Overview />
-        <ListDeployments />
+        {/* <Map />
+        <Snapshots /> */}
+        {/* <Dashboard /> */}
     </div>
 );
 

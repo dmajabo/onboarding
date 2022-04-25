@@ -24,7 +24,7 @@ button.ant-btn-primary,
     color: black;
 }
 .container {
-    background-color: #0c323e;
+    /* background-color: #0c323e; */
     /* background-image: url('/src/assets/main-bg-filter.png'); */
     background-size: cover;
     height: 100vh;

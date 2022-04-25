@@ -1,5 +1,5 @@
 .container {
-    background-image: url('/src/assets/blur.png');
+    /* background-image: url('/src/assets/blur.png'); */
     background-size: cover;
 }
 .auth-container .logo {

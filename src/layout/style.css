@@ -1,11 +1,25 @@
+div.blur-bg {
+    background-image: url('/src/assets/blur.png');
+    background-size: cover;
+    background-color: #0c323e;
+}
+div.map-bg {
+    background-image: url('/src/assets/main-bg-filter.png');
+    background-size: cover;
+    background-color: #0c323e;
+}
 .sidebar-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
     padding: 32px 0px;
-    padding-top: 27px;
-    position: fixed;
+    /* padding-top: 92px; */
+    background-color: rgba(0, 0, 0, 0.21);
+    box-shadow: 3px 0px 32px rgba(29, 32, 59, 0.52);
+}
+.sidebar-menu-items {
+    margin-top: 92px;
 }
 .navbar {
     background-color: transparent !important;
@@ -17,8 +31,9 @@
 .navbar-logo {
     margin-left: 22px;
 }
-
 .sidebar {
+    min-width: 253px !important;
+    width: 253px;
     min-height: 100vh;
     margin-right: 24px;
 }
@@ -44,7 +59,11 @@
     padding-left: 26px;
 }
 .sidebar-logo-container {
-    margin-bottom: 50px !important;
+    background-image: url('/src/assets/logo.png');
+    background-size: cover;
+    width: 189px;
+    height: 29px;
+    margin: 32px auto;
 }
 .sidebar-logo {
     width: 95%;

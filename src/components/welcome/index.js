@@ -1,9 +1,8 @@
 import React from 'react';
 import { Row, Button } from 'antd';
-import { useHistory, useLocation } from 'react-router-dom';
-// import './intro.css';
+import { useHistory } from 'react-router-dom';
 
-export const Intro = () => {
+export const Welcome = () => {
     const history = useHistory();
     return (
         <>
@@ -34,4 +33,4 @@ export const Intro = () => {
     );
 };
 
-export default Intro;
+export default Welcome;

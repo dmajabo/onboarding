@@ -48,7 +48,6 @@ const Routes = () => {
 
                 <PrivateTermsRoute exact={true} path="/terms" component={TermsPage} />
 
-                <PublicRoute exact={true} path="/intro" component={IntroPage} />
                 <PublicRoute exact={true} path="/welcome" component={IntroPage} />
                 <PublicRoute exact={true} path="/invite" component={LoginPage} />
                 <PublicRoute exact={true} path="/login" component={LoginPage} />
