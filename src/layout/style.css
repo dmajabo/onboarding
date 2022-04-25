@@ -41,6 +41,7 @@ div.map-bg {
     background-color: transparent !important;
     box-shadow: 3px 0px 32px rgba(29, 32, 59, 0.52);
     border-right: 2px solid rgba(252, 175, 119, 0.16);
+    margin-right: 0px;
 }
 .ant-menu-inline,
 .ant-menu-vertical,
