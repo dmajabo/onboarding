@@ -5,6 +5,11 @@
     border: 1px solid rgba(133, 145, 174, 0.2);
     margin-top: 32px;
 }
+.indicator {
+    background-image: url('/src/assets/active-indicator.png');
+    width: 50px;
+    height: 50px;
+}
 .dashboard-container {
     padding: 32px;
 }
@@ -23,8 +28,18 @@
     width: '100%';
     height: 577px;
     background-color: #0c323e;
-    /* background-image: url('/src/assets/map.png'); */
+    background-image: url('/src/assets/map.png');
     background-size: cover;
+}
+.map-deck-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /* background-color: #0c323e; */
+    background-color: #00181f;
+    opacity: 0.5;
 }
 .map-info {
     position: absolute;
@@ -43,15 +58,24 @@
     font-size: 20px;
     text-transform: capitalize;
 }
+.map-info .components-left h2 {
+    margin-bottom: 40px;
+}
 .map-chart {
     width: 280px;
     height: 290px;
     background: rgba(252, 175, 119, 0.01);
     border: 1px solid rgba(133, 145, 174, 0.1);
+    box-sizing: border-box;
+    backdrop-filter: blur(24px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.map-info .map-chart h2 {
+    align-self: flex-start;
+    margin-left: 25px;
 }
 .map-chart .chart-tooltip > span {
     font-weight: 500;
@@ -60,9 +84,10 @@
     text-align: center;
     color: #fcaf77;
 }
-.map-chart .chart-tooltip > .indicator {
+.map-chart .cursor {
     width: 247px;
     height: 4px;
+    background-color: #fcaf77;
 }
 .map {
     width: 100%;
@@ -87,6 +112,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    text-transform: uppercase;
 }
 
 .map-info .date > span {

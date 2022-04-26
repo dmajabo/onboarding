@@ -2,12 +2,9 @@ import React from 'react';
 // import { Row, Col } from 'antd';
 import moment from 'moment';
 import AreaChart from './Chart';
-// import AreaChart from 'components/cards/meterdata/AreaChart';
-import MapDeck from './DeckMap';
-// import DistroDeck from 'pages/map-page';
+// import MapDeck from './DeckMap';
 
-// const data = [{ sourcePosition: [-122.41669, 37.7853], targetPosition: [-122.41669, 37.781] }];
-const DATA = 'https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_10m_airports.geojson';
+// const DATA = 'https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_10m_airports.geojson';
 
 const CHART_DATA = [
     {
@@ -36,10 +33,8 @@ export default function Map() {
     return (
         <div className="map-container">
             <div className="map-deck-border">
-                <div className="map-deck">
-                    <MapDeck data={DATA} />
-                    {/* <DistroDeck /> */}
-                </div>
+                <div className="map-deck">{/* <MapDeck data={DATA} /> */}</div>
+                <div className="map-deck-overlay"></div>
             </div>
             <div className="map-info">
                 <div className="components-left">
