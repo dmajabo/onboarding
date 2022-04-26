@@ -31,7 +31,7 @@ export default function Chart({ data }) {
                     tickCount={6}
                     width={40}
                 />
-                <Tooltip content={<ChartTooltip />} />
+                <Tooltip content={<ChartTooltip />} cursor={false} />
                 <Area type={'monotone'} dataKey="y" stroke="#fcaf77" fill="#fcaf7760" />
             </AreaChart>
         </ResponsiveContainer>

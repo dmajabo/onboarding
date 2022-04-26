@@ -23,7 +23,7 @@
     width: '100%';
     height: 577px;
     background-color: #0c323e;
-    background-image: url('/src/assets/map.png');
+    /* background-image: url('/src/assets/map.png'); */
     background-size: cover;
 }
 .map-info {

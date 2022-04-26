@@ -6,8 +6,8 @@ const COUNTRIES = 'https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_5
 
 const INITIAL_VIEW_STATE = {
     latitude: 52.3676,
-    longitude: 4.9041,
-    zoom: 7,
+    longitude: 4.3041,
+    zoom: 6,
     bearing: 0,
     pitch: 30
 };
@@ -24,30 +24,28 @@ export default function Root({ data }) {
         <DeckGL
             controller={true}
             initialViewState={INITIAL_VIEW_STATE}
-            parameters={
-                {
-                    // clearColor: [0.4, 0.2, 0.248]
-                }
-            }
+            parameters={{
+                clearColor: [0, 0, 0, 0.4]
+            }}
         >
             <GeoJsonLayer
                 id="base-map"
                 pickable
                 data={COUNTRIES}
-                stroked={true}
-                // filled={true}
+                // stroked={true}
+                filled={true}
                 // lineWidthMinPixels={2}
-                // opacity={0.4}
+                opacity={0.4}
                 getLineColor={[100, 100, 100]}
-                getFillColor={[0, 0, 0]}
+                getFillColor={[0, 0, 0, 150]}
                 // pointType={'icon'}
             />
             <GeoJsonLayer
                 id="airports"
                 data={data}
                 filled={true}
-                pointRadiusMinPixels={2}
-                pointRadiusScale={2000}
+                pointRadiusMinPixels={5}
+                // pointRadiusScale={1000}
                 // getPointRadius={f => 11 - f.properties.scalerank}
                 getFillColor={[252, 175, 119, 252]}
                 pickable={true}

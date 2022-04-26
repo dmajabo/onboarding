@@ -3,7 +3,7 @@ import React from 'react';
 import moment from 'moment';
 import AreaChart from './Chart';
 // import AreaChart from 'components/cards/meterdata/AreaChart';
-// import MapDeck from './DeckMap';
+import MapDeck from './DeckMap';
 // import DistroDeck from 'pages/map-page';
 
 // const data = [{ sourcePosition: [-122.41669, 37.7853], targetPosition: [-122.41669, 37.781] }];
@@ -37,7 +37,7 @@ export default function Map() {
         <div className="map-container">
             <div className="map-deck-border">
                 <div className="map-deck">
-                    {/* <MapDeck data={DATA} /> */}
+                    <MapDeck data={DATA} />
                     {/* <DistroDeck /> */}
                 </div>
             </div>
