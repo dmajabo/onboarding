@@ -28,8 +28,9 @@ function App({ children }) {
                 <NavBar menu={Menu} />
                 <Layout>
                     <Sidebar menu={Menu} />
-
-                    <Layout.Content className="content">{children}</Layout.Content>
+                    <Layout.Content className="content" style={{ marginLeft: 250 }}>
+                        {children}
+                    </Layout.Content>
                 </Layout>
             </div>
         </div>
