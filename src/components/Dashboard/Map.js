@@ -1,20 +1,45 @@
 import React from 'react';
 // import { Row, Col } from 'antd';
 import moment from 'moment';
-// import LineChart from './Chart';
+import AreaChart from './Chart';
 // import AreaChart from 'components/cards/meterdata/AreaChart';
-import MapDeck from './DeckMap';
+// import MapDeck from './DeckMap';
 // import DistroDeck from 'pages/map-page';
 
 // const data = [{ sourcePosition: [-122.41669, 37.7853], targetPosition: [-122.41669, 37.781] }];
 const DATA = 'https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_10m_airports.geojson';
 
+const CHART_DATA = [
+    {
+        x: 0,
+        y: 0
+    },
+    {
+        x: 15,
+        y: 15
+    },
+    {
+        x: 30,
+        y: 30
+    },
+    {
+        x: 50,
+        y: 50
+    },
+    {
+        x: 100,
+        y: 100
+    }
+];
+
 export default function Map() {
     return (
         <div className="map-container">
-            <div className="map-deck">
-                <MapDeck data={DATA} />
-                {/* <DistroDeck /> */}
+            <div className="map-deck-border">
+                <div className="map-deck">
+                    {/* <MapDeck data={DATA} /> */}
+                    {/* <DistroDeck /> */}
+                </div>
             </div>
             <div className="map-info">
                 <div className="components-left">
@@ -39,8 +64,7 @@ export default function Map() {
                 <div className="components-right">
                     <div className="map-chart">
                         <h2>your energy profile</h2>
-                        {/* <LineChart /> */}
-                        {/* <AreaChart /> */}
+                        <AreaChart data={CHART_DATA} />
                     </div>
                 </div>
             </div>
