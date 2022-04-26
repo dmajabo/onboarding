@@ -6,6 +6,7 @@ import Dashboard from 'components/Dashboard';
 const SuperAdminDashboard = () => (
     <div className="dashboard-container">
         <Map />
+        <hr className="divider" />
         <Dashboard />
     </div>
 );
