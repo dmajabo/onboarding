@@ -83,19 +83,6 @@ const SignupForm = () => {
                                 onBlur={handleBlur('password')}
                             />
                         </Form.Item>
-                        {/* <Box>
-                            <Row justify="end">
-                                <Button
-                                    style={{
-                                        textTransform: 'capitalize'
-                                    }}
-                                    type={'link'}
-                                    onClick={() => history.push('/reset')}
-                                >
-                                    Forgot Password?
-                                </Button>
-                            </Row>
-                        </Box> */}
                         {error && (
                             <Box marginTop={3}>
                                 <Typography variant="caption" color="error">

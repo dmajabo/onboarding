@@ -12,19 +12,31 @@ const CHART_DATA = [
         y: 0
     },
     {
-        x: 15,
-        y: 15
+        x: 2,
+        y: 5,
     },
     {
-        x: 30,
+        x: 5,
+        y: 10,
+    },
+    {
+        x: 10,
+        y: 20
+    },
+    {
+        x: 15,
         y: 30
     },
     {
-        x: 50,
-        y: 50
+        x: 20,
+        y: 40
     },
     {
-        x: 100,
+        x: 30,
+        y: 60
+    },
+    {
+        x: 40,
         y: 100
     }
 ];
@@ -61,7 +73,7 @@ export default function Map() {
                         <h2>your energy profile</h2>
                         <AreaChart data={CHART_DATA} />
                     </div>
-                    <div className="map-chart-demo"></div>
+                    {/* <div className="map-chart-demo"></div> */}
                 </div>
             </div>
         </div>
