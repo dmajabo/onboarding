@@ -67,12 +67,12 @@ const LoginForm = ({ changePassword, setResetPassword, setChangePassword, isSign
                                 prefix={<UserOutlined className="site-form-item-icon" />}
                                 placeholder="Username"
                                 size={'large'}
-                                disabled={query.get('email')}
+                                disabled={query.get('username')}
                                 value={values.username}
                                 onChange={handleChange('username')}
                             />
                         </Form.Item>
-                        {isSignup && (
+                        {/* {isSignup && (
                             <Form.Item name="email" rules={[{ required: true, message: 'Please input your email!' }]}>
                                 <Input
                                     prefix={<MailOutlined className="site-form-item-icon" />}
@@ -83,7 +83,7 @@ const LoginForm = ({ changePassword, setResetPassword, setChangePassword, isSign
                                     onBlur={handleBlur('email')}
                                 />
                             </Form.Item>
-                        )}
+                        )} */}
                         <Form.Item name="password" rules={[{ required: true, message: 'Please input your password!' }]}>
                             <Input.Password
                                 prefix={<LockOutlined className="site-form-item-icon" />}
@@ -122,7 +122,7 @@ const LoginForm = ({ changePassword, setResetPassword, setChangePassword, isSign
                                 id={'login'}
                                 size="large"
                                 fullWidth={true}
-                                // disabled={!isValid || submitting}
+                                disabled={!isValid || submitting}
                                 type={'primary'}
                                 block
                                 htmlType="submit"

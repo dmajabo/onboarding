@@ -6,11 +6,12 @@ import ResetPasswordForm from './components/reset-password-form/ChangePasswordFo
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 import { MailOutlined } from '@ant-design/icons';
+import { Auth } from 'aws-amplify';
 import '../login.css';
 
 const ResetPasswordPage = () => {
     const [email, setEmail] = useState('');
-
+    const [submitting, setSubmitting] = useState(false);
     return (
         <div className="auth-container">
             <div className="logo"></div>
@@ -26,7 +27,6 @@ const ResetPasswordPage = () => {
                         })}
                         onSubmit={values => {
                             setEmail(values.email);
-                            //  handleResetPassword(values);
                         }}
                     >
                         {({ errors, values, handleChange, handleBlur, handleSubmit, isValid }) => (
@@ -46,7 +46,13 @@ const ResetPasswordPage = () => {
                                         />
                                     </Form.Item>
                                     <Box marginTop={1}>
-                                        <Button type="primary" size="large" block>
+                                        <Button
+                                            type="primary"
+                                            size="large"
+                                            disabled={!isValid || submitting}
+                                            block
+                                            htmlType="submit"
+                                        >
                                             Login
                                         </Button>
                                     </Box>
@@ -55,11 +61,7 @@ const ResetPasswordPage = () => {
                         )}
                     </Formik>
                 )}
-                {/* {email && (
-                    <Box marginTop={5} width="100%">
-                        <ResetPasswordForm user={email} />
-                    </Box>
-                )} */}
+                {email && <ResetPasswordForm user={email} />}
             </div>
         </div>
     );
