@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 // import { Row, Col } from 'antd';
 import moment from 'moment';
 import AreaChart from './Chart';
 // import MapDeck from './DeckMap';
+import { Layout } from './../../components/newmap';
+import useInterval from '../../hooks/useInterval';
 
 // const DATA = 'https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_10m_airports.geojson';
 
@@ -13,11 +15,11 @@ const CHART_DATA = [
     },
     {
         x: 2,
-        y: 5,
+        y: 5
     },
     {
         x: 5,
-        y: 10,
+        y: 10
     },
     {
         x: 10,
@@ -42,10 +44,25 @@ const CHART_DATA = [
 ];
 
 export default function Map() {
+    const [timer, setTimer] = useState(0);
+    const [offset, setOffset] = useState(0);
+
+    useInterval(
+        () => {
+            setTimer(timer + 0.02);
+            if (timer > 1) setTimer(0);
+        },
+        // Delay in milliseconds or null to stop it
+        1 / 30
+    );
+
     return (
         <div className="map-container">
             <div className="map-deck-border">
-                <div className="map-deck">{/* <MapDeck data={DATA} /> */}</div>
+                <div className="map-deck">
+                    {/* <Layout offset={timer} /> */}
+                    {/* <MapDeck data={DATA} /> */}
+                </div>
                 <div className="map-deck-overlay"></div>
             </div>
             <div className="map-info">

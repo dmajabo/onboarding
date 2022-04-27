@@ -49,7 +49,7 @@ export default function Chart({ data }) {
                     tickCount={6}
                     width={40}
                 />
-                <Tooltip content={<ChartTooltip />} offset={5} />
+                <Tooltip content={<ChartTooltip />} cursor={false} offset={5} />
                 {/* <Tooltip content={<ChartTooltip />} cursor={<ChartCursor />} offset={5} /> */}
                 <Area type={'monotone'} dataKey="y" stroke="#fcaf77" fill="url(#colorUv)" strokeWidth={2} />
             </AreaChart>

@@ -42,6 +42,7 @@
     background-image: url('/src/assets/dots.png');
     background-repeat: no-repeat;
     background-position: center;
+    /* display: none; */
     /* background-color: #0c323e; */
     /* background-color: #00181f; */
     /* opacity: 0.5; */

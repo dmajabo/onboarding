@@ -42901,7 +42901,7 @@ class Map extends Component {
                                 id: 'points-layer',
                                 data: data,
                                 getPosition: d => d.position,
-                                getFillColor: [255, 255, 255],
+                                getFillColor: [252, 175, 119, 252],
                                 opacity : 0.8,
                                 getRadius: 50,
                                 radiusMinPixels: 3,
