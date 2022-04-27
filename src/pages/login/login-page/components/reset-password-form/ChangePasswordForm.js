@@ -6,7 +6,7 @@ import * as Yup from 'yup';
 import { TextField } from '@mui/material';
 import { Box, Typography } from '@mui/material';
 import { Button, Form, Input } from 'antd';
-import { MailOutlined, LockOutlined } from '@ant-design/icons';
+import { MailOutlined, LockOutlined, NumberOutlined } from '@ant-design/icons';
 import Loading from 'components/loading/Loading';
 
 const ChangePasswordForm = ({ user }) => {
@@ -62,7 +62,7 @@ const ChangePasswordForm = ({ user }) => {
                     <Box width="100%" maxWidth="400px" margin="auto">
                         <Form.Item name="email" rules={[{ required: true, message: 'Please input your email!' }]}>
                             <Input
-                                prefix={<MailOutlined className="site-form-item-icon" />}
+                                prefix={<NumberOutlined className="site-form-item-icon" />}
                                 size={'large'}
                                 placeholder="Enter the code we have emailed"
                                 value={values.code}
@@ -80,27 +80,6 @@ const ChangePasswordForm = ({ user }) => {
                                 onBlur={handleBlur('password')}
                             />
                         </Form.Item>
-                        {/* <Box marginTop={3}>
-                            <TextField
-                                type="text"
-                                variant="outlined"
-                                placeholder="Enter the code we have emailed"
-                                fullWidth={true}
-                                value={values.code}
-                                onChange={handleChange('code')}
-                                onBlur={handleBlur('code')}
-                            />
-
-                            <TextField
-                                type="password"
-                                variant="outlined"
-                                placeholder="Enter your new password here"
-                                fullWidth={true}
-                                value={values.password}
-                                onChange={handleChange('password')}
-                                onBlur={handleBlur('password')}
-                            />
-                        </Box> */}
                         {error && (
                             <Box marginTop={3}>
                                 <Typography variant="caption" color="error">

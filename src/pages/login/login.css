@@ -36,6 +36,7 @@
     align-self: center;
     /* margin-bottom: 24px; */
     color: #ecf2ff;
+    margin: auto 0px
 }
 .auth-footer {
     display: flex;
