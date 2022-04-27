@@ -41,8 +41,8 @@ export default function Chart({ data }) {
                     tickCount={6}
                     width={40}
                 />
-                <Tooltip content={<ChartTooltip />} cursor={<ChartCursor />} />
-                {/* <Tooltip content={<ChartTooltip />} cursor={{ stroke: '#fcaf77', strokeWidth: 1 }} offset={5} /> */}
+                {/* <Tooltip content={<ChartTooltip />} cursor={<ChartCursor />} /> */}
+                <Tooltip content={<ChartTooltip />} cursor={{ stroke: '#fcaf77', strokeWidth: 1 }} offset={5} />
                 {/* <Tooltip content={<ChartTooltip />} cursor={<div className="cursor">custom cursor</div>} /> */}
                 <Area type={'monotone'} dataKey="y" stroke="#fcaf77" fill="#fcaf7760" strokeWidth={2} />
                 {/* <Area type={'monotone'} dataKey="y" stroke="#fcaf77" fill="url(#colorUv)" /> */}

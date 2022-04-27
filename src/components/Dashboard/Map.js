@@ -61,6 +61,7 @@ export default function Map() {
                         <h2>your energy profile</h2>
                         <AreaChart data={CHART_DATA} />
                     </div>
+                    <div className="map-chart-demo"></div>
                 </div>
             </div>
         </div>
