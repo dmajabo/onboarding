@@ -64,10 +64,10 @@ const ChangePasswordForm = ({ user }) => {
                             <Input
                                 prefix={<MailOutlined className="site-form-item-icon" />}
                                 size={'large'}
-                                placeholder="Enter your email"
-                                value={values.email}
-                                onChange={handleChange('email')}
-                                onBlur={handleBlur('email')}
+                                placeholder="Enter the code we have emailed"
+                                value={values.code}
+                                onChange={handleChange('code')}
+                                onBlur={handleBlur('code')}
                             />
                         </Form.Item>
                         <Form.Item name="password" rules={[{ required: true, message: 'Please input your password!' }]}>
