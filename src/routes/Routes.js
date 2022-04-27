@@ -6,6 +6,7 @@ import UsersPage from 'pages/users';
 import MapPage from 'pages/map-page';
 import WelcomePage2 from 'pages/login/welcome-page/';
 import LoginPage from 'pages/login/login-page/LoginPage';
+import SignupPage from 'pages/login/login-page/SignupPage';
 import ResetPasswordPage from 'pages/login/login-page/ResetPasswordPage';
 import OnboardingPage from 'pages/onboarding';
 import PrivateRoute from './PrivateRoute';
@@ -51,6 +52,7 @@ const Routes = () => {
                 <PublicRoute exact={true} path="/welcome" component={IntroPage} />
                 <PublicRoute exact={true} path="/invite" component={LoginPage} />
                 <PublicRoute exact={true} path="/login" component={LoginPage} />
+                <PublicRoute exact={true} path="/register" component={SignupPage} />
                 <PublicRoute exact={true} path="/reset" component={ResetPasswordPage} />
             </MainTemplate>
         </Switch>

@@ -13,30 +13,21 @@ function useQuery() {
     return new URLSearchParams(useLocation().search);
 }
 
-const LoginForm = ({ changePassword, setResetPassword, setChangePassword }) => {
+const SignupForm = ({ changePassword, setResetPassword, setChangePassword, isSignup, onChangeSignMethod }) => {
     const history = useHistory();
     const [submitting, setSubmitting] = useState(false);
     const [error, setError] = useState(null);
     let query = useQuery();
 
-    const handleLogin = async values => {
+    const handleSignup = async values => {
         setError(null);
         setSubmitting(true);
 
-        let response = null;
-
         try {
-            response = await Auth.signIn(values.username, values.password);
-
-            if (response?.challengeName === 'NEW_PASSWORD_REQUIRED') {
-                setChangePassword(response);
-            } else {
-                history.push('/terms');
-            }
+            await Auth.signUp(values.username, values.password);
         } catch (e) {
             setError(e);
             setSubmitting(false);
-            if (e.code === 'PasswordResetRequiredException') setResetPassword(values.username);
         }
     };
 
@@ -56,7 +47,7 @@ const LoginForm = ({ changePassword, setResetPassword, setChangePassword }) => {
                     .min(6)
             })}
             onSubmit={values => {
-                handleLogin(values);
+                handleSignup(values);
             }}
         >
             {({ errors, values, handleChange, handleBlur, handleSubmit, isValid }) => (
@@ -72,6 +63,16 @@ const LoginForm = ({ changePassword, setResetPassword, setChangePassword }) => {
                                 onChange={handleChange('username')}
                             />
                         </Form.Item>
+                        {/* <Form.Item name="email" rules={[{ required: true, message: 'Please input your email!' }]}>
+                                <Input
+                                    prefix={<MailOutlined className="site-form-item-icon" />}
+                                    placeholder="Email"
+                                    size={'large'}
+                                    value={values.email}
+                                    onChange={handleChange('email')}
+                                    onBlur={handleBlur('email')}
+                                />
+                            </Form.Item> */}
                         <Form.Item name="password" rules={[{ required: true, message: 'Please input your password!' }]}>
                             <Input.Password
                                 prefix={<LockOutlined className="site-form-item-icon" />}
@@ -82,8 +83,7 @@ const LoginForm = ({ changePassword, setResetPassword, setChangePassword }) => {
                                 onBlur={handleBlur('password')}
                             />
                         </Form.Item>
-
-                        <Box>
+                        {/* <Box>
                             <Row justify="end">
                                 <Button
                                     style={{
@@ -95,8 +95,7 @@ const LoginForm = ({ changePassword, setResetPassword, setChangePassword }) => {
                                     Forgot Password?
                                 </Button>
                             </Row>
-                        </Box>
-
+                        </Box> */}
                         {error && (
                             <Box marginTop={3}>
                                 <Typography variant="caption" color="error">
@@ -104,7 +103,7 @@ const LoginForm = ({ changePassword, setResetPassword, setChangePassword }) => {
                                 </Typography>
                             </Box>
                         )}
-                        <Box marginTop={1}>
+                        <Box marginTop={2}>
                             <Button
                                 variant="contained"
                                 id={'login'}
@@ -115,14 +114,14 @@ const LoginForm = ({ changePassword, setResetPassword, setChangePassword }) => {
                                 block
                                 htmlType="submit"
                             >
-                                Sign In
+                                Sign Up
                             </Button>
                         </Box>
                         <Box marginTop={3}>
                             <Row className="auth-footer">
                                 <p>Already have an account?</p>
-                                <Button type={'link'} onClick={() => history.push('/register')}>
-                                    Registering
+                                <Button type={'link'} onClick={() => history.push('/login')}>
+                                    Log in
                                 </Button>
                             </Row>
                         </Box>
@@ -135,4 +134,4 @@ const LoginForm = ({ changePassword, setResetPassword, setChangePassword }) => {
     );
 };
 
-export default LoginForm;
+export default SignupForm;

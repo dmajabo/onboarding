@@ -11,26 +11,29 @@ const LoginPage = () => {
     //we need 2 different flows for changing a password and resetting a password as changing requires a session object
     const [changePassword, setChangePassword] = useState(null); //changePassword will contain the session user returned from cognito where setChangePassword is called. Currently needed for it to work
     const [resetPassword, setResetPassword] = useState(null);
-    const [signUp, setsignUp] = useState(false);
 
-    // const SelectedForm = signUp ? SignupForm : LoginForm;
     return (
         <div className="auth-container">
             <div className="logo"></div>
             <div className="auth-form">
-                <h2>{signUp ? 'Sign Up' : 'Sign In'} </h2>
+                <h2> {changePassword ? 'Change Password' : 'Sign In'} </h2>
                 {!changePassword && !resetPassword && (
                     <LoginForm
                         user={user}
                         changePassword={changePassword}
                         setChangePassword={setChangePassword}
                         setResetPassword={setResetPassword}
-                        isSignup={signUp}
-                        onChangeSignMethod={() => setsignUp(!signUp)}
+                    />
+                )}
+                {changePassword && (
+                    <ChangePasswordForm
+                        user={user}
+                        changePassword={changePassword}
+                        setChangePassword={setChangePassword}
                     />
                 )}
 
-                {/* {resetPassword && <ResetPasswordForm user={resetPassword} />} */}
+                {resetPassword && <ResetPasswordForm user={resetPassword} />}
             </div>
         </div>
     );

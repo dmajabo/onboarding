@@ -11,7 +11,7 @@ export const Intro = () => {
                 <img src={'/logo-main.png'} />
                 <h2 className="heading">has arrived in the port of Rotterdam</h2>
                 <div className="buttons">
-                    <Button type="primary" size={'large'} onClick={() => history.push('/login')}>
+                    <Button type="primary" size={'large'} onClick={() => history.push('/register')}>
                         Sign Up
                     </Button>
                     <div className="space"></div>

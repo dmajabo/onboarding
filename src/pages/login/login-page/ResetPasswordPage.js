@@ -53,7 +53,7 @@ const ResetPasswordPage = () => {
                                             block
                                             htmlType="submit"
                                         >
-                                            Login
+                                            Reset password
                                         </Button>
                                     </Box>
                                 </Box>
