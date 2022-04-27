@@ -13,7 +13,7 @@ function useQuery() {
     return new URLSearchParams(useLocation().search);
 }
 
-const SignupForm = ({ changePassword, setResetPassword, setChangePassword, isSignup, onChangeSignMethod }) => {
+const SignupForm = () => {
     const history = useHistory();
     const [submitting, setSubmitting] = useState(false);
     const [error, setError] = useState(null);

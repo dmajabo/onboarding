@@ -4,7 +4,7 @@ import DashboardPage from 'pages/dashboard-page/';
 import Dashboard2 from 'components/Dashboard';
 import UsersPage from 'pages/users';
 import MapPage from 'pages/map-page';
-import WelcomePage2 from 'pages/login/welcome-page/';
+import WelcomePage from 'pages/login/welcome-page/';
 import LoginPage from 'pages/login/login-page/LoginPage';
 import SignupPage from 'pages/login/login-page/SignupPage';
 import ResetPasswordPage from 'pages/login/login-page/ResetPasswordPage';
@@ -22,7 +22,6 @@ import WalletPage from 'pages/wallet-page';
 import InvoicePage from 'pages/invoice-page';
 import FAQPage from 'pages/faq-page';
 import HelpPage from 'pages/help-page';
-import IntroPage from 'pages/intro-page';
 
 const Routes = () => {
     //use account context to get the logged in account
@@ -42,14 +41,14 @@ const Routes = () => {
                 <PrivateRoute exact={true} path="/help" component={HelpPage} />
 
                 <PrivateRoute exact={true} path="/admin/dashboard" component={SuperAdminDashboard} />
-                <PrivateRoute exact={true} path="/admin/dashboard2" component={WelcomePage2} />
+                <PrivateRoute exact={true} path="/admin/dashboard2" component={WelcomePage} />
                 <PrivateRoute exact={true} path="/admin/accounts" component={SuperAdminAccounts} />
                 <PrivateRoute exact={true} path="/admin/audit" component={SuperAdminAudit} />
                 <PrivateRoute exact={true} path="/admin/deployments" component={SuperAdminDeployments} />
 
                 <PrivateTermsRoute exact={true} path="/terms" component={TermsPage} />
 
-                <PublicRoute exact={true} path="/welcome" component={IntroPage} />
+                <PublicRoute exact={true} path="/welcome" component={WelcomePage} />
                 <PublicRoute exact={true} path="/invite" component={LoginPage} />
                 <PublicRoute exact={true} path="/login" component={LoginPage} />
                 <PublicRoute exact={true} path="/register" component={SignupPage} />
