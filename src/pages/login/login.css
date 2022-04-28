@@ -75,9 +75,22 @@
     background-color: transparent;
     color: white;
 }
-.ant-input-affix-wrapper > input.ant-input:focus {
-    /* border: 1px solid white; */
+.ant-input-affix-wrapper:focus{
+    box-shadow: white;
+    border: 0;
 }
+.ant-input-affix-wrapper{
+    box-shadow: 0 0 0 1px white;
+}
+.ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover{
+    border: 1px solid white;
+    opacity: 1;
+}
+/* .ant-input:focus {
+    border-color: white;
+    outline: 0;
+    box-shadow: 0 0 0 2px white;
+} */
 .ant-input-affix-wrapper .ant-input-prefix {
     margin: 5px 6px;
 }

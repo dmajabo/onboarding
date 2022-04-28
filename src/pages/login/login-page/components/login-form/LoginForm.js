@@ -69,6 +69,7 @@ const LoginForm = ({ changePassword, setResetPassword, setChangePassword }) => {
                                 size={'large'}
                                 disabled={query.get('username')}
                                 value={values.username}
+                                bordered
                                 onChange={handleChange('username')}
                             />
                         </Form.Item>
