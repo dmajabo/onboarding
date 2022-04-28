@@ -45,18 +45,6 @@ const CHART_DATA = [
 ];
 
 export default function Map() {
-    const [timer, setTimer] = useState(0);
-    const [offset, setOffset] = useState(0);
-
-    useInterval(
-        () => {
-            setTimer(timer + 0.02);
-            if (timer > 1) setTimer(0);
-        },
-        // Delay in milliseconds or null to stop it
-        1 / 30
-    );
-
     return (
         <div className="map-container">
             <div className="map-deck-border">

@@ -2,7 +2,7 @@ div.blur-bg {
     background-image: url('/src/assets/blur.png');
     background-size: cover;
     background-color: #0c323e;
-    height: 100vh;
+    min-height: 100vh;
 }
 div.map-bg {
     background-image: url('/src/assets/main-bg-filter.png');
