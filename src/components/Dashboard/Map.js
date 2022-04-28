@@ -5,8 +5,9 @@ import AreaChart from './Chart';
 // import MapDeck from './DeckMap';
 import { Layout } from './../../components/newmap';
 import useInterval from '../../hooks/useInterval';
-
-// const DATA = 'https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_10m_airports.geojson';
+import LineIcon from './gadgets/LineIcon';
+import EnergyIcon from './gadgets/EnergyIcon';
+import TimerGadget from './gadgets/TimerGadget';
 
 const CHART_DATA = [
     {
@@ -60,30 +61,19 @@ export default function Map() {
         <div className="map-container">
             <div className="map-deck-border">
                 <div className="map-deck">
-                    {/* <Layout offset={timer} /> */}
+                    <Layout />
                     {/* <MapDeck data={DATA} /> */}
                 </div>
-                <div className="map-deck-overlay"></div>
+                {/* <div className="map-deck-overlay"></div> */}
             </div>
             <div className="map-info">
                 <div className="components-left">
                     <div>
                         <h2>Port of Rotterdam</h2>
-                        <div className="stats">
-                            <div className="icon icon-chart" />
-                            <p>
-                                26/<span>26</span>
-                            </p>
-                        </div>
-                        <div className="stats">
-                            <div className="icon icon-battery" />
-                            <p>213</p>
-                        </div>
+                        <LineIcon value={26} total={26} />
+                        <EnergyIcon value={222} />
                     </div>
-                    <div className="card date">
-                        <span className="time">{moment().format('hh:mm')}</span>
-                        <span className="day">{moment().format('d MMM YYYY')}</span>
-                    </div>
+                    <TimerGadget />
                 </div>
                 <div className="components-right">
                     <div className="map-chart">
