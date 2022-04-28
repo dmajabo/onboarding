@@ -6,6 +6,12 @@ import './style.css';
 
 const TopicMenu = () => {
     const { pathname } = useLocation();
+
+    function logout() {
+        localStorage.clear();
+        window.location.href = '/';
+    }
+
     return (
         <div className="sidebar-container">
             <div>
@@ -25,7 +31,7 @@ const TopicMenu = () => {
                 </div>
             </div>
             <div className="user-auth">
-                <a href="/logout" className="sidebar-link">
+                <a onClick={logout} className="sidebar-link">
                     Logout
                 </a>
             </div>
