@@ -224,3 +224,9 @@
 .custom-table .ant-table-tbody > tr > td {
     border-bottom: 1px solid rgba(133, 145, 174, 0.2);
 }
+.dashboard-container .accounts{
+    
+}
+.dashboard-container .accounts h1{
+    color: #fff;
+}

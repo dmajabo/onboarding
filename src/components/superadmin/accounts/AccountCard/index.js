@@ -42,9 +42,8 @@ const AccountCard = ({ account, selectedAccount, setSelectedAccount, refetch }) 
             </Box>
             <AccountMap account={account} />
 
-            <ViewAccountUsers   setSelectedAccount={setSelectedAccount} refetch={refetch} account={account} />
+            <ViewAccountUsers setSelectedAccount={setSelectedAccount} refetch={refetch} account={account} />
             <ViewAccountDevices setSelectedAccount={setSelectedAccount} refetch={refetch} account={account} />
-
         </CardContent>
     </Card>
 );

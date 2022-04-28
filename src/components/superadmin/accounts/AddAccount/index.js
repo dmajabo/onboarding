@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
-import { Input, Button, Checkbox } from '@mui/material';
+import { Input, Checkbox } from '@mui/material';
+import { Button } from 'antd'
 import Alert from '@mui/material/Alert';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
@@ -54,6 +55,8 @@ export default function AddAccount({ setSelectedAccount, refetch, deploymentId }
 
                         <Button
                             variant={'outlined'}
+                            size={'large'}
+                            type={'primary'}
                             style={{marginBottom : '5px'}}
                             id={'addAccount'}
                             onClick={() => {
