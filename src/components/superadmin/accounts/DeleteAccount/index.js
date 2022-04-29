@@ -3,26 +3,26 @@ import { Input, Button, Checkbox } from '@mui/material';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import HighlightOffOutlinedIcon from '@mui/icons-material/HighlightOffOutlined';
+import { CloseOutlined } from '@ant-design/icons';
 
 const DELETE_ACCOUNT = gql`
-       mutation MyMutation($account_id : uuid!) {
-          delete_account_table_by_pk(id: $account_id) {
+    mutation MyMutation($account_id: uuid!) {
+        delete_account_table_by_pk(id: $account_id) {
             id
-          }
+        }
     }
-    `;
+`;
 
 export default function DeleteAccount({ refetch, account, setSelectedAccount }) {
-
     return (
         <Mutation
             mutation={DELETE_ACCOUNT}
-            variables={{account_id : account.id}}
-            onCompleted={(e) => {
+            variables={{ account_id: account.id }}
+            onCompleted={e => {
                 refetch && refetch();
                 setSelectedAccount(null);
             }}
-            onError={(e) => {
+            onError={e => {
                 alert(e);
             }}
         >
@@ -31,8 +31,15 @@ export default function DeleteAccount({ refetch, account, setSelectedAccount }) 
 
                 return (
                     <Fragment>
-
-                        <HighlightOffOutlinedIcon
+                        <CloseOutlined
+                            style={{ marginBottom: '5px', color: 'white', fontSize: 20 }}
+                            id={'deleteAccount'}
+                            onClick={e => {
+                                e.stopPropagation(); //stop card click event happening
+                                MyMutation();
+                            }}
+                        />
+                        {/* <HighlightOffOutlinedIcon
                             style={{marginBottom : '5px'}}
                             id={'deleteAccount'}
                             onClick={(e) => {
@@ -42,8 +49,7 @@ export default function DeleteAccount({ refetch, account, setSelectedAccount }) 
                             }}
                         >
 
-                        </HighlightOffOutlinedIcon>
-
+                        </HighlightOffOutlinedIcon> */}
                     </Fragment>
                 );
             }}

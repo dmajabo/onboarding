@@ -9,10 +9,11 @@ import ViewAccountWallet from './ViewAccountWallet';
 import ViewAccountDevices from './ViewAccountDevices';
 import AccountMap from './AccountMap/AccountMapHolder';
 import CardContent from '@mui/material/CardContent';
+import { Card as AntdCard } from 'antd';
 import React from 'react';
 
 const AccountCard = ({ account, selectedAccount, setSelectedAccount, refetch }) => (
-    <Card
+    <AntdCard
         className={'test-AccountCard'}
         onClick={() => {
             setSelectedAccount(null);
@@ -21,31 +22,40 @@ const AccountCard = ({ account, selectedAccount, setSelectedAccount, refetch }) 
             }, 100);
         }}
         raised={account.id === selectedAccount?.id}
+        // bordered
+        // title={account.name}
+        // actions={[
+        //     <ViewAccountUsers setSelectedAccount={setSelectedAccount} refetch={refetch} account={account} />,
+        //     <ViewAccountDevices setSelectedAccount={setSelectedAccount} refetch={refetch} account={account} />
+        // ]}
+        style={{ background: 'rgba(236, 242, 255, 0.08)', border: '1px solid #fcaf7788', borderRadius: 5 }}
+        bodyStyle={{ padding: 0 }}
+        bordered
+        // .ant-card-actions
     >
-        <CardContent sx={{ bgcolor: '#0c323e', color: 'white' }}>
-            <Box>
-                <Grid container={true} justifyContent="space-between">
-                    <Grid item={true} sm={8}>
-                        <AccountName account={account} refetch={refetch} />
-                        <AccountType refetch={refetch} account={account} />
-                    </Grid>
-                    <Grid item={true} sm={4}>
-                        <Box textAlign="right">
-                            <DeleteAccount
-                                setSelectedAccount={setSelectedAccount}
-                                refetch={refetch}
-                                account={account}
-                            />
-                        </Box>
-                    </Grid>
+        <Box sx={{ padding: 2 }}>
+            <Grid container={true} justifyContent="space-between">
+                <Grid item={true} sm={8}>
+                    <AccountName account={account} refetch={refetch} />
+                    <AccountType refetch={refetch} account={account} />
                 </Grid>
-            </Box>
-            <AccountMap account={account} />
-
-            <ViewAccountUsers setSelectedAccount={setSelectedAccount} refetch={refetch} account={account} />
-            <ViewAccountDevices setSelectedAccount={setSelectedAccount} refetch={refetch} account={account} />
-        </CardContent>
-    </Card>
+                <Grid item={true} sm={4}>
+                    <Box textAlign="right">
+                        <DeleteAccount setSelectedAccount={setSelectedAccount} refetch={refetch} account={account} />
+                    </Box>
+                </Grid>
+            </Grid>
+        </Box>
+        <AccountMap account={account} />
+        <Grid container justifyContent={'flex-end'} padding={1} gap={1}>
+            <Grid item>
+                <ViewAccountUsers setSelectedAccount={setSelectedAccount} refetch={refetch} account={account} />
+            </Grid>
+            <Grid item>
+                <ViewAccountDevices setSelectedAccount={setSelectedAccount} refetch={refetch} account={account} />
+            </Grid>
+        </Grid>
+    </AntdCard>
 );
 
 export default AccountCard;

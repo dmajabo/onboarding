@@ -72,7 +72,7 @@ const AccountsPage = () => {
     if (!user) return null;
 
     return (
-        <div>
+        <div className='accounts'>
             <Query query={ACCOUNTS} fetchPolicy={'network-only'} onError={() => alert('nope')}>
                 {({ data, refetch }) => {
                     return (

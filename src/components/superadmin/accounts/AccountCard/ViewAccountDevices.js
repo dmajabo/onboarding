@@ -24,7 +24,7 @@ export default function ViewAccountDevices({account, refetch}) {
     return (
         <Fragment>
 
-            <Button id='testAccountDevices' size={'small'} variant="text" color="primary" onClick={handleClickOpen}>
+            <Button id='testAccountDevices' size={'medium'} variant="outlined" color="primary" onClick={handleClickOpen}>
                  Mappings
             </Button>
 

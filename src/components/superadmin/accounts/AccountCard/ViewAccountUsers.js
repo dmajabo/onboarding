@@ -25,7 +25,7 @@ export default function ViewAccount({account}) {
     return (
         <Fragment>
 
-            <Button id='testAccountUserShowDialog' size={'small'} variant="text" color="primary" onClick={handleClickOpen}>
+            <Button id='testAccountUserShowDialog' size={'medium'} variant="outlined" color="primary" onClick={handleClickOpen}>
                  Users
             </Button>
 
