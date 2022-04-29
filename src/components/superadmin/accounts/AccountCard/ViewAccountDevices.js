@@ -1,17 +1,18 @@
-import React, {useState, Fragment} from 'react';
-import Button from '@mui/material/Button';
+import React, { useState, Fragment } from 'react';
+// import Button from '@mui/material/Button';
+import { Button } from 'antd';
 import Dialog from '@mui/material/Dialog';
 import Box from '@mui/material/Box';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
-import ViewAccountDeviceQuery from "./ViewAccountDeviceQuery";
+import ViewAccountDeviceQuery from './ViewAccountDeviceQuery';
 
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
-export default function ViewAccountDevices({account, refetch}) {
-    const [open,        setOpen]       = useState(false);
+export default function ViewAccountDevices({ account, refetch }) {
+    const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -23,18 +24,21 @@ export default function ViewAccountDevices({account, refetch}) {
 
     return (
         <Fragment>
-
-            <Button id='testAccountDevices' size={'medium'} variant="outlined" color="primary" onClick={handleClickOpen}>
-                 Mappings
+            <Button
+                id="testAccountDevices"
+                // size={'medium'}
+                // variant="outlined"
+                // color="primary"
+                type={'primary'}
+                onClick={handleClickOpen}
+            >
+                Mappings
             </Button>
 
-            <Dialog
-                maxWidth="md"
-                open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-
+            <Dialog maxWidth="md" open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle id="id">
                     <Box display="flex" alignItems="center">
-                        <Box flexGrow={1} >{account.name} Mappings</Box>
+                        <Box flexGrow={1}>{account.name} Mappings</Box>
                         <Box>
                             <IconButton onClick={handleClose} size="large">
                                 <CloseIcon />
@@ -44,9 +48,8 @@ export default function ViewAccountDevices({account, refetch}) {
                 </DialogTitle>
 
                 <DialogContent>
-                    <ViewAccountDeviceQuery account={account}/>
+                    <ViewAccountDeviceQuery account={account} />
                 </DialogContent>
-
             </Dialog>
         </Fragment>
     );

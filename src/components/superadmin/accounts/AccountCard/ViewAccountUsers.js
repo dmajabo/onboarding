@@ -1,18 +1,19 @@
-import React, {useState, Fragment} from 'react';
-import Button from '@mui/material/Button';
+import React, { useState, Fragment } from 'react';
+// import Button from '@mui/material/Button';
+import { Button } from 'antd';
 import Dialog from '@mui/material/Dialog';
 import Box from '@mui/material/Box';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
-import ViewAccountUsersQuery from "./ViewAccountUsersQuery";
-import CreateUser from "../../../users/CreateUser";
+import ViewAccountUsersQuery from './ViewAccountUsersQuery';
+import CreateUser from '../../../users/CreateUser';
 
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
-export default function ViewAccount({account}) {
-    const [open,        setOpen]       = useState(false);
+export default function ViewAccount({ account }) {
+    const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -24,18 +25,21 @@ export default function ViewAccount({account}) {
 
     return (
         <Fragment>
-
-            <Button id='testAccountUserShowDialog' size={'medium'} variant="outlined" color="primary" onClick={handleClickOpen}>
-                 Users
+            <Button
+                id="testAccountUserShowDialog"
+                // size={'medium'}
+                // variant="outlined"
+                // color="primary"
+                type={'primary'}
+                onClick={handleClickOpen}
+            >
+                Users
             </Button>
 
-            <Dialog
-
-                open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-
+            <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle id="id">
                     <Box display="flex" alignItems="center">
-                        <Box flexGrow={1} >{account.name} Users</Box>
+                        <Box flexGrow={1}>{account.name} Users</Box>
                         <Box>
                             <IconButton onClick={handleClose} id={'testCloseAddDialog'} size="large">
                                 <CloseIcon />
@@ -44,16 +48,11 @@ export default function ViewAccount({account}) {
                     </Box>
                 </DialogTitle>
 
-
                 <DialogContent>
-
-                    <ViewAccountUsersQuery account={account}/>
-
+                    <ViewAccountUsersQuery account={account} />
                 </DialogContent>
 
-                <DialogActions>
-
-                </DialogActions>
+                <DialogActions></DialogActions>
             </Dialog>
         </Fragment>
     );
