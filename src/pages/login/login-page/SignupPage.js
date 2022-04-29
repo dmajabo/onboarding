@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react';
 import SignupForm from './components/signup-form/SignupForm';
-import { UserContext } from 'components/providers/UserProvider';
-import '../login.css';
+import '../styles.scss';
 
 const SignupPage = () => {
     // const { user } = useContext(UserContext);

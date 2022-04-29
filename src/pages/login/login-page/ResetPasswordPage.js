@@ -6,8 +6,7 @@ import ResetPasswordForm from './components/reset-password-form/ChangePasswordFo
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 import { MailOutlined } from '@ant-design/icons';
-import { Auth } from 'aws-amplify';
-import '../login.css';
+import '../styles.scss';
 
 const ResetPasswordPage = () => {
     const [email, setEmail] = useState('');

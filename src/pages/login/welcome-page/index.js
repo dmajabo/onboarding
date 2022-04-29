@@ -15,7 +15,7 @@ const Home = () => {
                 onSignin={() => history.push('/login')}
                 onSignup={() => history.push('/register')}
             />
-            <Grid className="footer" container>
+            <Grid container>
                 <Grid direction={'column'} justifyContent={'center'}>
                     <StatsCard>
                         60 units <span>over</span> 3 qs km

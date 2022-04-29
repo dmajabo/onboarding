@@ -3,7 +3,7 @@ import LoginForm from './components/login-form/LoginForm';
 import ChangePasswordForm from './components/change-password-form/ChangePasswordForm';
 import ResetPasswordForm from './components/reset-password-form/ChangePasswordForm';
 import { UserContext } from 'components/providers/UserProvider';
-import '../login.css';
+import '../styles.scss';
 
 const LoginPage = () => {
     const { user } = useContext(UserContext);

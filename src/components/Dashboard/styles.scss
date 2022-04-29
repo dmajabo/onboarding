@@ -1,0 +1,136 @@
+%card {
+    border: 1px solid rgba(133, 145, 174, 0.1);
+}
+.map-components{
+    h2 {
+        font-weight: 500;
+        color: white;
+        font-size: 20px;
+        text-transform: capitalize;
+    }
+    .map-chart{
+        h2{
+            align-self: flex-start;
+            margin-left: 25px;
+        }
+        .chart-tooltip{
+            span{
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 32px;
+                text-align: center;
+                color: #fcaf77;
+            }
+        } 
+        .cursor{
+            width: 247px;
+            height: 4px;
+            background-color: #fcaf77;
+        }
+    }
+    .stats {
+        width: 64px;
+        height: 64px;
+        background: rgba(236, 242, 255, 0.01);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0px;
+        @extend %card
+    }
+    .date {
+        span {
+            font-weight: 400;
+            font-size: 16px;
+            text-align: center;
+            color: white;
+            height: 40px;
+            padding: 8px
+        }
+    }  
+    .date > span.time {
+        @extend %card;
+    }
+    .date > span.day {
+        @extend %card;
+    }
+    .stats{
+        .icon.icon-chart {
+            width: 25px;
+            height: 25px;
+            background-image: url('../../assets/chart.png');
+            background-size: cover;
+        }
+        .icon.icon-battery {
+            width: 30px;
+            height: 22px;
+            background-image: url('../../assets/battery.png');
+            background-size: cover;
+        }
+        p {
+            margin: 0px;
+            font-size: 16px;
+            line-height: 24px;
+            color: white;
+            font-weight: bold;
+        }
+        p > span {
+            margin: 0px;
+            color: gray;
+            font-weight: 400;
+        }
+    }
+} 
+
+.accounts {
+    h1{
+        color: #fff;
+    }
+} 
+
+.table-heading {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: #ffffff;
+    margin: 24px 0px;
+}
+
+.custom-table .ant-table {
+    background: transparent !important;
+}
+
+.custom-table .ant-table-cell {
+    background: transparent;
+}
+
+.custom-table .ant-table-thead {
+    background: rgba(252, 175, 119, 0.02);
+    backdrop-filter: blur(12px);
+}
+.custom-table table tr td:hover {
+    background: transparent !important;
+}
+.custom-table .ant-table-thead tr th {
+    color: #fcaf77;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    border-bottom: 1px solid transparent !important;
+}
+.custom-table .ant-table-tbody > tr.ant-table-row:hover > td,
+.ant-table-tbody > tr > td {
+    color: #fff !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.custom-table .ant-table-tbody > tr.ant-table-row:hover > td,
+.ant-table-tbody > tr > td.ant-table-cell-row-hover {
+    background: transparent !important;
+}
+.custom-table .ant-table-tbody > tr > td {
+    border-bottom: 1px solid rgba(133, 145, 174, 0.2);
+}

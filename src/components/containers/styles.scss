@@ -1,0 +1,75 @@
+%corner {
+    width: 177px;
+    height: 176px;
+    position: absolute;
+}
+.public-container {
+    .main {
+        button {
+            width: 200px;
+            height: 44px;
+            font-size: 20px;
+        }
+        .heading {
+            color: white;
+            text-transform: uppercase;
+            margin: 50px 0px;
+        }
+        img{
+            width: 756px;
+        }
+    }
+    .copyright {
+        position: absolute;
+        right: 25px;
+        bottom: 25px;
+    }
+    .corner{
+        &-top{
+            @extend %corner;
+            background-image: url('../../assets/Vector\ 13.png');
+        }
+        &-bottom{
+            @extend %corner;
+            background-image: url('../../assets/Vector\ 14.png');
+        }
+    }
+    .stats_card {
+        border: 2px solid #3d6f6440;
+        padding: 8px 10px;
+        margin-top: 10px;
+        color: white;
+        border-radius: 4px;
+        font-size: 16px;
+        span {
+            color: #3d6f64;
+            font-size: 14px;
+        }
+    }
+}
+
+.ant-btn-default,
+.ant-btn-primary,
+.ant-btn-default:hover,
+.ant-btn-primary:hover {
+    border-color: #fcaf77;
+    color: black;
+}
+.ant-btn-link {
+    color: #fcaf77;
+    padding: 4px;
+}
+.ant-btn-default > span {
+    color: white;
+}
+button.ant-btn-default,
+.ant-btn-default:hover {
+    background-color: transparent;
+}
+button.ant-btn-primary,
+.ant-btn-primary:hover {
+    background-color: #fcaf77;
+}
+.ant-btn-primary:hover > span {
+    color: black;
+}
