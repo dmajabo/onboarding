@@ -22,7 +22,7 @@ const AccountCard = ({ account, selectedAccount, setSelectedAccount, refetch }) 
         }}
         raised={account.id === selectedAccount?.id}
     >
-        <CardContent>
+        <CardContent sx={{ bgcolor: '#0c323e', color: 'white' }}>
             <Box>
                 <Grid container={true} justifyContent="space-between">
                     <Grid item={true} sm={8}>

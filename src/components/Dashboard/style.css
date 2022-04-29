@@ -227,6 +227,6 @@
 .dashboard-container .accounts{
     
 }
-.dashboard-container .accounts h1{
+.dashboard-container .accounts > h1{
     color: #fff;
 }
