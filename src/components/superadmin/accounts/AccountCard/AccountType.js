@@ -12,6 +12,7 @@ import { Mutation } from 'react-apollo';
 import { Form, Select } from 'antd';
 import Typography from '@mui/material/Typography';
 
+const { Option } = Select;
 const UPDATE_ADDRESS_TYPE = gql`
     mutation($account_id: uuid, $type: String) {
         update_account_table(where: { id: { _eq: $account_id } }, _set: { type: $type }) {
@@ -50,30 +51,30 @@ export default function AccountType({ account, refetch }) {
                             >
                                 <Select
                                     value={account.type}
-                                    onChange={e =>
-                                        MyMutation({ variables: { account_id: account.id, type: e.target.value } })
-                                    }
+                                    onChange={type => {
+                                        MyMutation({ variables: { account_id: account.id, type } });
+                                    }}
                                 >
-                                    <MenuItem value={'Residential'}>Residential</MenuItem>
-                                    <MenuItem value={'Commercial'}>Commercial</MenuItem>
+                                    <Option value={'Residential'}>Residential</Option>
+                                    <Option value={'Commercial'}>Commercial</Option>
                                 </Select>
                             </Form.Item>
                         </Form>
                     );
-                    return (
-                        <FormControl className={classes.formControl}>
-                            <InputLabel>Type</InputLabel>
-                            <Select
-                                value={account.type}
-                                onChange={e =>
-                                    MyMutation({ variables: { account_id: account.id, type: e.target.value } })
-                                }
-                            >
-                                <MenuItem value={'Residential'}>Residential</MenuItem>
-                                <MenuItem value={'Commercial'}>Commercial</MenuItem>
-                            </Select>
-                        </FormControl>
-                    );
+                    // return (
+                    //     <FormControl className={classes.formControl}>
+                    //         <InputLabel>Type</InputLabel>
+                    //         <Select
+                    //             value={account.type}
+                    //             onChange={e =>
+                    //                 MyMutation({ variables: { account_id: account.id, type: e.target.value } })
+                    //             }
+                    //         >
+                    //             <MenuItem value={'Residential'}>Residential</MenuItem>
+                    //             <MenuItem value={'Commercial'}>Commercial</MenuItem>
+                    //         </Select>
+                    //     </FormControl>
+                    // );
                 }}
             </Mutation>
         </div>

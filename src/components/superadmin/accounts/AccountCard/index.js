@@ -1,4 +1,4 @@
-import { Card, Grid, Box } from '@mui/material';
+import { Grid, Box } from '@mui/material';
 import CardHeader from '@mui/material/CardHeader';
 import DeleteAccount from '../DeleteAccount';
 import AccountType from './AccountType';
@@ -9,11 +9,11 @@ import ViewAccountWallet from './ViewAccountWallet';
 import ViewAccountDevices from './ViewAccountDevices';
 import AccountMap from './AccountMap/AccountMapHolder';
 import CardContent from '@mui/material/CardContent';
-import { Card as AntdCard } from 'antd';
+import { Card } from 'antd';
 import React from 'react';
 
 const AccountCard = ({ account, selectedAccount, setSelectedAccount, refetch }) => (
-    <AntdCard
+    <Card
         className={'test-AccountCard'}
         onClick={() => {
             setSelectedAccount(null);
@@ -22,12 +22,6 @@ const AccountCard = ({ account, selectedAccount, setSelectedAccount, refetch }) 
             }, 100);
         }}
         raised={account.id === selectedAccount?.id}
-        // bordered
-        // title={account.name}
-        // actions={[
-        //     <ViewAccountUsers setSelectedAccount={setSelectedAccount} refetch={refetch} account={account} />,
-        //     <ViewAccountDevices setSelectedAccount={setSelectedAccount} refetch={refetch} account={account} />
-        // ]}
         style={{ background: 'rgba(236, 242, 255, 0.08)', border: '1px solid #fcaf7788', borderRadius: 5 }}
         bodyStyle={{ padding: 0 }}
         bordered
@@ -55,7 +49,7 @@ const AccountCard = ({ account, selectedAccount, setSelectedAccount, refetch }) 
                 <ViewAccountDevices setSelectedAccount={setSelectedAccount} refetch={refetch} account={account} />
             </Grid>
         </Grid>
-    </AntdCard>
+    </Card>
 );
 
 export default AccountCard;
